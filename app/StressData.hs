@@ -18,11 +18,7 @@ module StressData
                      label :: !Int
     } deriving (Generic, Show, Eq)
 
-    instance FromRecord StressData where
-    parseRecord xs
-        | length xs == 4 = StressData <$> (xs .! 0) <*> (xs .! 1)  <*> (xs .!2) <*> (xs .!3)
-        | otherwise      = mzero
-    instance ToRecord StressData where
-        toRecord (StressData id' subreddit' text' label') = record [
-            toField id', toField subreddit' toField text' toField label']
+    instance FromNamedRecord StressData
+    instance ToNamedRecord StressData
+    instance DefaultOrdered StressData
 
