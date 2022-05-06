@@ -1,6 +1,6 @@
 {-# LANGUAGE DeriveGeneric #-}
 module StressData
-    (StressData)
+    (StressData, FromNamedRecord, ToNamedRecord, DefaultOrdered)
     where
     import qualified Data.Vector as V
     import qualified Data.ByteString.Lazy as BL
